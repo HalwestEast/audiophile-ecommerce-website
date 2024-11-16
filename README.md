@@ -1,1 +1,1 @@
-### Audiophile Ecommerce store Built with NextJS 15
+### Audiophile Ecommerce store Built with NextJS 15, TypeScript, TailwindCSS
