@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import clsx from "clsx";
+import cn from "@/app/utils/cn";
 
 type VariantProps = {
   variant: "primary" | "outline" | "link";
@@ -7,19 +7,18 @@ type VariantProps = {
 };
 
 export default function Button({ variant, children }: VariantProps) {
-  const baseClasses = clsx(
-    "w-[160px] h-[48px] flex items-center justify-center font-manrope text-sm font-normal transition-all"
-  );
-  const variantClasses = clsx({
-    "bg-[#D87D4A] hover:bg-[#FBAF85] text-white": variant === "primary",
-    "border-2 border-black hover:bg-black text-black hover:text-white":
-      variant === "outline",
-    "text-black hover:text-[#FBAF85]": variant === "link",
-  });
+  const baseClasses =
+    "w-[160px] h-[48px] flex items-center justify-center font-manrope text-sm font-normal transition-all";
+
+  const variantClasses = {
+    primary: "bg-[#D87D4A] hover:bg-[#FBAF85] text-white",
+    outline: "border-2 border-black hover:bg-black text-black hover:text-white",
+    link: "text-black hover:text-[#FBAF85]",
+  };
 
   return (
-    <button className={clsx(baseClasses, variantClasses)}>
-      <div className={clsx("flex items-center gap-2")}>
+    <button className={cn(baseClasses, variantClasses[variant])}>
+      <div className={cn("flex items-center gap-2")}>
         {children}
         {variant === "link" && (
           <svg

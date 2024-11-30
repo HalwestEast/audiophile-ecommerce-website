@@ -8,6 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "hero-bg-lg": "url('/assets/home/desktop/image-hero.jpg')",
+        "hero-bg-sm": "url('/assets/home/mobile/image-header.jpg')",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
