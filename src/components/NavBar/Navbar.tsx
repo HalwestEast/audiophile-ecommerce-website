@@ -5,14 +5,13 @@ import CartIcon from "../../../public/assets/Icons/CartIcon";
 import LogoIcon from "../../../public/assets/Icons/Logo.Icon";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed left-0 top-0 z-50 w-full bg-black/20 font-manrope font-medium tracking-widest backdrop-blur">
-      <div className="flex flex-row justify-between px-6 py-4 md:mx-auto md:w-[1110px]">
-        {/* Hamburger Menu for Mobile */}
+    <nav className="fixed left-0 top-0 z-50 w-full font-manrope font-medium tracking-widest">
+      <div className="flex flex-row justify-between bg-black/20 px-6 py-4 backdrop-blur-lg md:mx-auto md:w-[1110px]">
         <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setIsMenuOpen(!isOpen)}
           className="text-white focus:outline-none md:hidden"
         >
           <svg
@@ -33,12 +32,10 @@ export default function Navbar() {
           </svg>
         </button>
 
-        {/* Logo */}
         <div className="text-center md:text-left">
           <LogoIcon />
         </div>
 
-        {/* Desktop Navigation */}
         <ul className="hidden text-white md:flex md:justify-center md:gap-6">
           <li className="text-sm transition-all hover:cursor-pointer hover:text-[#FBAF85]">
             HOME
@@ -54,17 +51,14 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Cart Icon */}
         <div className="text-white">
           <CartIcon />
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="mx-auto hidden w-full border-b-2 border-zinc-800 md:block md:w-[1110px]" />
+      <div className="mx-auto hidden w-full border-b-2 border-zinc-800/70 md:block md:w-[1110px]" />
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
+      {isOpen && (
         <ul className="flex h-screen w-full flex-col items-center justify-start gap-20 bg-black/85 py-4 pt-16 text-2xl text-white backdrop-blur-md md:hidden">
           <li className="transition-all hover:cursor-pointer hover:text-[#FBAF85]">
             HOME

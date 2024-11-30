@@ -11,7 +11,7 @@ export default function ProductsGrid() {
         <div className="absolute left-0 top-0 opacity-20">
           <Circles />
         </div>
-        <div className="z-50 size-40 md:size-fit">
+        <div className="z-20 size-40 md:size-fit">
           <Image alt="product" width={350} height={350} src={speakerImage} />
         </div>
         <div className="flex flex-col items-center gap-6 font-manrope text-white">
